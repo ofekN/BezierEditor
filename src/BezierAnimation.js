@@ -1,5 +1,5 @@
 
-class bezierEditor{
+export default class bezierEditor{
     constructor(){
         
         this.bezierEditorDiv = document.createElement('div')

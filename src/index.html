@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<style>
-    .theBezierDiv{
+    <title>BezierCurve-Editor</title>
+    
+    <style>
+ .theBezierDiv{
              position: absolute;
             left: 20%;
             width: 240px;
@@ -57,7 +57,7 @@
         .dot1{
             cursor:pointer;
             user-select:none;
-            transform: translateX(-35px) translateY(-20px);
+            transform: translateX(-25px) translateY(-25px);
             position: absolute;
             width: 30px;
             height: 30px;
@@ -70,7 +70,7 @@
         .dot{
             cursor:pointer;
             user-select:none;
-            transform: translateX(-35px) translateY(-20px);
+            transform: translateX(-25px) translateY(-25px);
             position: absolute;
             width: 30px;
             height: 30px;
@@ -80,28 +80,37 @@
             background-color: rgb(72, 132, 253);
             z-index: 5;
         }
+    </style>
 
+</head>
 
-        .box{
-            width: 20%;
-            height: 20%;
-            transform: translateX(10%) translateY(55%) rotate(145deg) scaleY(.5) scaleX(.5);
-            background-color: red;
-            position: absolute;
-            left: 0%;
-        }
-</style>
 <body>
-  
-    <div class="dob" style="top:-40%;position:absolute;"></div>
+     
 
-        <div class="box"></div>
-        <p> box x:<span class="boxval"></span> </p>
 
-    
-    
-    <script src="easer.js"></script>
-    <script type="module" src="BezierAnimation.js"></script>
-    <script type="module" src="index.js"></script>
+
+
+    <script src="index.js" type="module"></script>
+
+    <script type="module">
+        import bezierEditor from './index.js'
+        let bezier = new bezierEditor()
+
+
+        document.addEventListener('click',()=>{
+            console.log(bezier.bezierValues)
+        })
+
+
+
+        function animation(){
+        window.requestAnimationFrame(animation)
+
+        bezier.bezierLoop()
+
+        }
+
+        animation()
+    </script>
 </body>
 </html>

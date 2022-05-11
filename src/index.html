@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .theBezierDiv{
+             position: absolute;
+            left: 20%;
+            width: 240px;
+            height: 280px;
+            top:10%;
+}    
+.bezierTextRow {
+    width: 100%;
+    position: absolute;
+    height: 40px;
+    border: 2px solid black;
+    border-bottom: none !important;
+}
+.bezierTextRow p {
+    text-align: center;
+    line-height: 5px;
+}
+.boxholder {
+    position: relative;
+    left: 0%;
+    width: 100%;
+    height: 86%;
+    top: 14%;
+}
+     .canvas{
+        position: absolute;
+        z-index: 2;
+        transform: rotateX(180deg);
+        }
+        .canvasBoxing{
+        position: absolute;
+        left: 0.5%;
+        top: 0.5%;
+        z-index: 2;
+        }
+        .canvasBox{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 2px solid black;
+            z-index: 10;
+        }
+        .cubic-bezier-row{
+            width: 100%;
+            height: 3;
+        }
+        .dot1{
+            cursor:pointer;
+            user-select:none;
+            transform: translateX(-35px) translateY(-20px);
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            left: 15%;
+            bottom: -7.5%;
+            clip-path: circle();
+            background-color: rgb(153, 244, 89);
+            z-index: 5;
+        }
+        .dot{
+            cursor:pointer;
+            user-select:none;
+            transform: translateX(-35px) translateY(-20px);
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            right: -13.5%;
+            top: 10%;
+            clip-path: circle();
+            background-color: rgb(72, 132, 253);
+            z-index: 5;
+        }
+
+
+        .box{
+            width: 20%;
+            height: 20%;
+            transform: translateX(10%) translateY(55%) rotate(145deg) scaleY(.5) scaleX(.5);
+            background-color: red;
+            position: absolute;
+            left: 0%;
+        }
+</style>
+<body>
+  
+    <div class="dob" style="top:-40%;position:absolute;"></div>
+
+        <div class="box"></div>
+        <p> box x:<span class="boxval"></span> </p>
+
+    
+    
+    <script src="easer.js"></script>
+    <script type="module" src="BezierAnimation.js"></script>
+    <script type="module" src="index.js"></script>
+</body>
+</html>
